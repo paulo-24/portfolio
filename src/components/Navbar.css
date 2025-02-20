@@ -1,0 +1,64 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align everything to the left by default */
+  width: 100%;
+  padding: 15px 30px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Ensures the logo stays on the left */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Pushes the logo to the left and nav-links to the right */
+}
+
+/* Adjusts the logo size */
+.logo img {
+  height: 50px; /* Adjust size */
+  width: auto;
+  display: block;
+}
+
+/* Ensures the navigation stays on the right */
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00c896;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .logo {
+    margin-right: 0; /* Reset margin for stacked layout */
+    margin-bottom: 10px; /* Add space between logo and links */
+  }
+
+  .nav-links {
+    flex-wrap: wrap; /* Allow links to wrap on small screens */
+  }
+}

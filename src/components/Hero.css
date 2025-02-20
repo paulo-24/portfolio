@@ -1,0 +1,142 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left; /* Align text to the left */
+    gap: 50px;
+}
+.hero h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 50px;
+    background: #ffffff;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar a {
+    color: black !important;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+}
+
+.navbar a:hover {
+    color: #007bff !important; /* Force color change */
+    transform: scale(1.1);
+}
+
+.hero-content {
+    max-width: 500px;
+    text-align: left; /* Align text properly */
+}
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .hero-description {
+    font-size: 1.5rem;
+    color: #555;
+    max-width: 500px;
+  }
+  
+  .hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .hero-image img {
+    width: 250px; /* Adjust size as needed */
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+  
+  .hero-image-background {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: #f4f4f4;
+    border-radius: 20px;
+    z-index: -1;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Adjust spacing between icons */
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    font-size: 30px !important; /* Adjust size of icons */
+    color: #0077b5; /* Default LinkedIn blue */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+  }
+
+ 
+
+  
+  
+  
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+      padding: 50px 20px;
+    }
+  
+    .hero-image {
+      width: 250px;
+      margin-top: 20px;
+    }
+  
+    .hero-image-background {
+      width: 280px;
+      height: 280px;
+    }
+  
+    .navbar {
+      justify-content: center;
+      padding: 10px 20px;
+    }
+  }
+  

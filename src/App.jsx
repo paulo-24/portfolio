@@ -1,13 +1,17 @@
-import Hero from './components/Hero.jsx'
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";  // ✅ Make sure you actually use Home in Routes
+import About from "./pages/About";
 
 const App = () => {
-  
-
   return (
-    <div> 
-      <Hero /> 
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />  
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 };
 

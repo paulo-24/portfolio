@@ -1,33 +1,33 @@
-import njdslak from '../assets/paulo.jpg';
+import "./Hero.css";
+import pauloImage from "../assets/paulo.png";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const Hero = () => {
-
   return (
-    <div className="App">
-    
-      <header className="header">
-        <h1>JP</h1>
-        <nav>S
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
-      <main>
-        <div className='hero-container'>
-            <section id="home" className="hero-section">
-                <h1>Hi, Im John Paulo Abrajano</h1>
-                <p>Frontend Developer | React Specialist</p>
-                <button className='cta-button'>Hire Me</button>
-            </section>
-            <img className="hero-image" src={njdslak}></img>
-        </div>
+    <section className="hero">
+      <div className="hero-content">
+        <h1>JOHN PAULO ABRAJANO</h1>
+        <h2>Backend Developer</h2>
+        <p>With a passion for developing modern React <br />web apps for commercial businesses.</p>
         
-      </main>
-    </div>
+        <div className="social-icons">
+  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-facebook"></i>
+  </a>
+  <a href="mailto:your-email@example.com">
+    <i className="fas fa-envelope"></i>
+  </a>
+  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+    <i className="fab fa-instagram"></i>
+  </a>
+</div>
+
+      </div>
+      <div className="hero-image">
+        <img src={pauloImage} alt="John Paulo Abrajano" className="circular-image" />
+      </div>
+    </section>
   );
 };
 
