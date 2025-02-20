@@ -1,0 +1,32 @@
+.about {
+    max-width: 800px;
+    margin: auto;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .about-line {
+    width: 50%;
+    margin: 10px auto;
+    border: none;
+    border-top: 2px solid #333; /* Adjust color and thickness */
+  }
+  
+  .about-image {
+    width: 500px; /* Increased size */
+    height: 200px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
