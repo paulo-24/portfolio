@@ -1,32 +1,103 @@
 .about {
-    max-width: 800px;
-    margin: auto;
-    padding: 80px 20px;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaedef;
+  padding: 20px; /* Prevents elements from touching screen edges */
+}
+
+.about-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  width: 90%; /* Adjusted for better scaling */
+  text-align: center;
+}
+
+/* Title styling */
+.about-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.about-line {
+  width: 150px;
+  height: 2px;
+  background-color: black;
+  margin: 10px auto 20px;
+}
+
+/* Flexbox content container */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+}
+
+/* Text Section */
+.about-text {
+  font-size: 18px;
+  line-height: 1.6;
+  flex: 1;
+  max-width: 55%; /* Gives more room for the image */
+  text-align: left;
+  min-width: 300px;
+}
+
+/* Image Section */
+.about-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 220px;
+  height: auto;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
+  .about-container {
+    width: 85%; /* Slightly reduce width for better responsiveness */
+    padding: 30px;
+  }
+
+  .about-content {
+    flex-direction: column;
     text-align: center;
   }
-  
-  .about h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+
+  .about-text {
+    max-width: 90%;
+    text-align: center;
   }
-  
-  .about p {
-    font-size: 1.2rem;
-    color: #555;
-    line-height: 1.6;
-  }
-  
-  .about-line {
-    width: 50%;
-    margin: 10px auto;
-    border: none;
-    border-top: 2px solid #333; /* Adjust color and thickness */
-  }
-  
+
   .about-image {
-    width: 500px; /* Increased size */
-    height: 200px;
-    border-radius: 50%; /* Makes it circular */
-    object-fit: cover;
-    margin-bottom: 20px;
+    width: 200px; /* Reduce size slightly for better fit */
   }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .about-text {
+    max-width: 100%;
+    font-size: 16px; /* Slightly reduce font size for readability */
+  }
+
+  .about-image {
+    width: 180px; /* Further reduce image size */
+  }
+}
