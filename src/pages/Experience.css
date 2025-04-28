@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.experience {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 204, 153, 0.3), transparent 70%);
+    z-index: -1;
+}
+
+.experience::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(153, 204, 255, 0.3), transparent 70%);
+    z-index: -1;
+}
+
+.button-wrapper {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    z-index: 10;
+}
+
+.top-back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: #fffc;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.top-back-button:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.top-back-button span {
+    display: inline-block;
+}
+
+.experience-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.experience-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.experience-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0f1132;
+    margin: 0;
+    text-align: center;
+    animation: bounce-in 1s ease-in-out;
+}
+
+@keyframes bounce-in {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.experience-item {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+    margin-bottom: 20px;
+}
+
+.experience-role {
+    font-size: 26px;
+    font-weight: 600;
+    color: #5a4b3c;
+    margin-bottom: 8px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.experience-duration {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 16px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.experience-description {
+    color: #6b5e4e;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.experience-description p {
+    margin-bottom: 20px;
+}
+
+.experience-description p em {
+    font-style: italic;
+    color: #ff9966;
+}
+
+.experience-description hr {
+    border: 0;
+    border-top: 2px dotted #ffcc99;
+    margin: 20px 0;
+}
+
+.experience-description p:nth-child(odd) {
+    background: rgba(255, 204, 153, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.experience-description .highlight-quote {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ff9966;
+    background: rgba(255, 204, 153, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #99ccff;
+    color: #5a4b3c;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button:hover {
+    background: #66b3ff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-button span {
+    display: inline-block;
+}
+
+.floating-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #ff9966;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: gentle-bounce 2s infinite;
+}
+
+.cta-button span {
+    display: none;
+}
+
+.cta-button:hover span {
+    display: inline;
+    position: absolute;
+    right: 70px;
+    background: #ff9966;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .experience {
+        padding: 32px;
+    }
+
+    .experience-container {
+        padding: 0 20px;
+    }
+
+    .experience-title {
+        font-size: 40px;
+        margin-bottom: 48px;
+    }
+
+    .experience-item {
+        padding: 24px;
+    }
+
+    .experience-role {
+        font-size: 24px;
+    }
+
+    .experience-duration {
+        font-size: 15px;
+    }
+
+    .experience-description {
+        font-size: 15px;
+    }
+
+    .experience-description .highlight-quote {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience {
+        padding: 24px;
+    }
+
+    .experience-container {
+        padding: 0 16px;
+    }
+
+    .button-wrapper {
+        top: 24px;
+        left: 16px;
+    }
+
+    .experience-header-top {
+        margin-bottom: 40px;
+    }
+
+    .experience-title {
+        font-size: 36px;
+    }
+
+    .experience-item {
+        padding: 20px;
+    }
+
+    .experience-role {
+        font-size: 22px;
+    }
+
+    .experience-duration {
+        font-size: 14px;
+    }
+
+    .experience-description {
+        font-size: 14px;
+    }
+
+    .experience-description .highlight-quote {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .back-button {
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+
+    .top-back-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .cta-button {
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience {
+        padding: 16px;
+    }
+
+    .experience-container {
+        padding: 0 12px;
+    }
+
+    .button-wrapper {
+        top: 16px;
+        left: 12px;
+    }
+
+    .experience-title {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .experience-item {
+        padding: 16px;
+    }
+
+    .experience-role {
+        font-size: 20px;
+    }
+
+    .experience-duration {
+        font-size: 13px;
+    }
+
+    .experience-description {
+        font-size: 13px;
+    }
+
+    .experience-description .highlight-quote {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .back-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .top-back-button {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+
+    .cta-button {
+        width: 40px;
+        height: 40px;
+        font-size: 10px;
+    }
+}

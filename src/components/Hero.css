@@ -1,39 +1,79 @@
-/* Apply grey background to the entire page */
+/* Base Setup */
 body, html {
-    background-color: #eaedef;
+    background-color: #e5e5e5 !important;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
 }
 
-/* Ensure the Hero section takes full width and centers content */
+/* Typewriter Effect */
+.typewriter {
+    font-size: 5vw;
+    color: red;
+    font-family: 'Bungee Shade', cursive;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    padding: 10px 5px;
+    line-height: 1.2;
+    white-space: normal;
+    overflow: visible;
+}
+
+/* Gradient Text */
+.gradient-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+/* Hero Section */
 .hero {
-    display: flex;
-    align-items: center; /* Centers vertically */
-    justify-content: center; /* Centers horizontally */
-    height: calc(100vh - 100px); /* Leaves space for the navbar */
-}
-
-/* Hero container (white box with shadow) */
-.hero-container {
-    background-color: white;
-    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 90%;
-    width: 700px;
-    padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    flex-wrap: wrap; /* Ensures better layout on small screens */
+    height: calc(100vh - 100px);
 }
 
-/* Hero content (text section) */
+/* Hero Container with Entrance Animation */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px;
+    overflow: hidden;
+    transform: translateX(-100%);
+    opacity: 0;
+    animation: slideInContainer 1.5s ease-out forwards;
+}
+
+@keyframes slideInContainer {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(10px);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Hero Content */
 .hero-content {
-    max-width: 500px;
+    max-width: 600px;
     text-align: left;
     flex: 1;
     min-width: 300px;
@@ -57,7 +97,21 @@ body, html {
     line-height: 1.6;
 }
 
-/* Social media icons */
+/* Button Group for Blog and Experience */
+.button-group {
+    display: flex;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+    justify-content: flex-start; /* Align buttons to the left */
+}
+
+/* Optional: Specific styling for Experience button */
+.experience-button {
+    /* Add any specific styles if needed, e.g., different color */
+    /* Example: background: linear-gradient(to right, #007bff, #0056b3); */
+}
+
+/* Social Media Icons */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -67,30 +121,101 @@ body, html {
 
 .social-icons a {
     font-size: 30px !important;
-    color: #0077b5; /* Default LinkedIn blue */
+    color: #760606;
     transition: transform 0.2s ease-in-out;
 }
 
 .social-icons a:hover {
-    transform: scale(1.2); /* Slight zoom effect on hover */
+    transform: scale(1.2);
 }
 
-/* Hero image container */
-.hero-image {
-    display: flex;
-    justify-content: center;
+/* Blog Button */
+.blog-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 75, 43, 0.4);
+    text-decoration: none;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+}
+
+.blog-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+/* Hero Image with Animation */
+.hero-image {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: slideInImage 1.5s ease-out forwards 0.3s;
+}
+
+@keyframes slideInImage {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    80% {
+        transform: translateX(-10px);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
 .hero-image img {
-    width: 100%; /* Ensures responsiveness */
-    max-width: 250px;
+    width: 100%;
+    max-width: 350px;
     height: auto;
     border-radius: 50%;
     object-fit: cover;
 }
 
-/* Navbar styling */
+/* Fade-Up Animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.fade-up.delay-1 {
+    animation-delay: 0.3s;
+}
+.fade-up.delay-2 {
+    animation-delay: 0.6s;
+}
+.fade-up.delay-3 {
+    animation-delay: 0.9s;
+}
+.fade-up.delay-4 {
+    animation-delay: 1.2s;
+}
+
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -102,7 +227,7 @@ body, html {
     position: relative;
 }
 
-/* Navigation links */
+/* Navigation Links */
 .nav-links {
     display: flex;
     list-style: none;
@@ -117,7 +242,6 @@ body, html {
     display: inline;
 }
 
-/* Navbar link styling */
 .navbar a {
     color: black !important;
     text-decoration: none;
@@ -126,14 +250,13 @@ body, html {
     transition: color 0.3s ease, transform 0.2s ease, text-decoration 0.2s ease;
 }
 
-/* Navbar link hover effect */
 .navbar a:hover {
-    color: #007bff !important; /* Blue on hover */
+    color: #007bff !important;
     text-decoration: underline;
     transform: scale(1.1);
 }
 
-/* Mobile responsiveness */
+/* Responsive Styles */
 @media (max-width: 1024px) {
     .hero {
         flex-direction: column;
@@ -142,11 +265,15 @@ body, html {
     }
 
     .hero-container {
-        width: 90%; /* Adjust width for tablets */
+        width: 90%;
     }
 
     .hero-content, .hero-image {
         text-align: center;
+    }
+
+    .button-group {
+        justify-content: center;
     }
 }
 
@@ -158,8 +285,8 @@ body, html {
     }
 
     .hero-container {
-        width: 90%; /* Adjust width for smaller screens */
-        flex-direction: column; /* Stack elements vertically */
+        width: 90%;
+        flex-direction: column;
         padding: 20px;
     }
 
@@ -168,7 +295,7 @@ body, html {
     }
 
     .hero-image img {
-        max-width: 180px; /* Reduce image size for small screens */
+        max-width: 180px;
     }
 
     .navbar {
@@ -182,5 +309,27 @@ body, html {
         flex-direction: column;
         gap: 10px;
         text-align: center;
+    }
+
+    .typewriter {
+        font-size: 7vw;
+    }
+
+    .button-group {
+        justify-content: center; /* Center buttons on smaller screens */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+    }
+}
+
+@media (max-width: 480px) {
+    .typewriter {
+        font-size: 9vw;
+        padding: 15px 5px;
+    }
+
+    .button-group {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        align-items: center;
+        gap: 15px;
     }
 }
