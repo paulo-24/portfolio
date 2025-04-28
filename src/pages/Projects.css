@@ -22,8 +22,9 @@
 }
 
 .projects-title {
+  font-family: 'Quicksand', sans-serif;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 4rem;
   background: linear-gradient(45deg, #e63946, #1d3557);
