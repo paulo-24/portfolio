@@ -30,6 +30,7 @@ const projects = [
     tech: ["ReactJS", "Tailwind"],
     github: "https://github.com/paulo-24/PokemonDex.git",
     image: pokeImg,
+    liveLink: "https://pokedexduel.netlify.app/"
   },
   {
     title: "To Do List App",

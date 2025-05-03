@@ -14,7 +14,7 @@ import day2Image3 from '../assets/2nd Day/collang.png';
 import day3Image1 from '../assets/3rd Day/Collage.png';
 import day3Image2 from '../assets/3rd Day/Col page.png';
 import day3Image3 from '../assets/3rd Day/collage pics.png';
-import day3Image4 from  '../assets/3rd Day/collage pictures.png';
+import day3Image4 from '../assets/3rd Day/collage pictures.png';
 import day3Image5 from '../assets/3rd Day/cars collage.png';
 //import the Day 4 images
 import day4Image1 from '../assets/4th Day/hytec.png';
@@ -32,6 +32,7 @@ import day6Image5 from '../assets/6th Day/PMA.png';
 import day7Image1 from '../assets/7th Day/Burnham Park.png';
 import day7Image2 from '../assets/7th Day/BGC.png';
 import day8Image1 from '../assets/8th Day/Going Home.png';
+import day8Image2 from '../assets/8th Day/airport.png';
 
 // Blog data with a new structure: each day has an array of sections
 const blogPosts = [
@@ -153,7 +154,7 @@ const blogPosts = [
   },
   {
     day: "Day 6",
-    title: "A  Journey to Baguio with Strawberries, Sights, and Cool Mountain Air",
+    title: "A Journey to Baguio with Strawberries, Sights, and Cool Mountain Air",
     date: "April 12, 2025",
     introText: "After days of exploring the city and learning about transportation and industries, it was finally time to travel north to Baguio City. Known for its cool climate and scenic views, Baguio welcomed us with a refreshing change of atmosphere and a series of exciting new experiences.",
     sections: [
@@ -210,12 +211,12 @@ const blogPosts = [
     introText: "Our journey had finally come to an end. Day 8 was all about preparing to leave Metro Manila and return home, carrying all the memories and experiences we had gathered throughout the trip.",
     sections: [
       {
-        image:  day8Image1,
+        image: day8Image2,
         text: "We woke up early at 4:00 AM to take a shower, pack up our belongings, and get ready for the day. After having breakfast at 5:00 AM, we left the dormitory at 5:30 AM and traveled to the airport. We arrived around 6:20 AM, even though our flight was scheduled for 10:00 AM. Since we were grouped with the first batch of students whose flight was at 8:00 AM, we also proceeded to check-in early. After checking in, we spent some time waiting inside the terminal. While waiting, I bought some snacks at a nearby 7-Eleven to pass the time. After a few hours, it was finally time to board the plane and officially end our educational adventure."
       },
       {
-        image: null,
-        text: "Although the trip had ended, the lessons, friendships, and unforgettable moments we experienced would stay with us forever. It was more than just a tour — it was a journey of learning, discovery, and personal growth. As we flew back home, we carried not only souvenirs but also memories that would last a lifetime."
+        image: day8Image1,
+        text: "Although the trip had ended, the lessons, friendships, and unforgettable moments we experienced would stay with us forever. It was more than just a tour; it was a journey of learning, discovery, and personal growth. As we flew back home, we carried not only souvenirs but also memories that would last a lifetime."
       },
       {
         image: null,
@@ -237,64 +238,75 @@ const Blog = () => {
   };
 
   return (
-    <section className="blog-section" id="blog">
-      <Link to="/" className="home-back-button">← Home</Link>
-      <h2 className="blog-title">Educational Tour Blog</h2>
-      {selectedPost ? (
-        <div className="blog-detail">
-          <button className="back-button" onClick={handleBackClick}>← Back to Blog</button>
-          <div className="blog-header">
-            <h3>{selectedPost.day}: {selectedPost.title}</h3>
-            <p className="blog-date">{selectedPost.date}</p>
-          </div>
-          {selectedPost.introText && (
-            <div className="blog-content-text">
-              <p>{selectedPost.introText}</p>
+    <div className="blog-wrapper">
+      <section className="blog-section" id="blog">
+        {!selectedPost && (
+          <Link to="/" className="home-back-button"><span>  </span></Link>
+        )}
+        {!selectedPost && <h2 className="blog-title">Educational Tour Blog</h2>}
+        {selectedPost ? (
+          <div className="blog-detail">
+            <div className="blog-main-image">
+              <button className="home-back-button" onClick={handleBackClick}><span> </span></button>
+              <div className="split-background">
+                <img src={selectedPost.sections[0].image} alt={`${selectedPost.day} Left Image`} className="split-left" />
+                <img src={selectedPost.sections[1].image} alt={`${selectedPost.day} Right Image`} className="split-right" />
+              </div>
+              <div className="diagonal-overlay"></div>
+              <div className="text-overlay">
+                <h4 className="image-title">{selectedPost.day}: {selectedPost.title}</h4>
+                <p className="image-subtitle">Our Journey Begins</p>
+              </div>
             </div>
-          )}
-          <div className="blog-main-image">
-            <img src={selectedPost.sections[0].image} alt={`${selectedPost.day} Main Image`} />
+            <div className="blog-content">
+              <div className="blog-header">
+                <h3>{selectedPost.day}: {selectedPost.title}</h3>
+                <p className="blog-date">{selectedPost.date}</p>
+              </div>
+              {selectedPost.introText && (
+                <div className="blog-content-text">
+                  <p>{selectedPost.introText}</p>
+                </div>
+              )}
+              {selectedPost.sections.map((section, index) => (
+                <div className="blog-section-container" key={index}>
+                  {section.image && (
+                    <div className="blog-image-container">
+                      <img
+                        src={section.image}
+                        alt={`${selectedPost.day} Image ${index + 1}`}
+                        className="blog-detail-image"
+                      />
+                    </div>
+                  )}
+                  {section.text && (
+                    <div className="blog-content-text">
+                      <p>{section.text}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="blog-content-text">
-            <p>{selectedPost.sections[0].text}</p>
-          </div>
-          <div className="blog-images">
-            {selectedPost.sections.slice(1).map((section, index) => (
-              <div className="blog-image-container" key={index}>
-                {section.image && (
-                  <img
-                    src={section.image}
-                    alt={`${selectedPost.day} Image ${index + 2}`}
-                    className="blog-detail-image"
-                  />
-                )}
-                {section.text && (
-                  <p className="blog-additional-content">
-                    {section.text}
-                  </p>
-                )}
+        ) : (
+          <div className="blog-grid">
+            {blogPosts.map((post, index) => (
+              <div
+                className="blog-card"
+                key={index}
+                onClick={() => handleCardClick(post)}
+                style={{ animationDelay: `${index * 0.2}s`, backgroundImage: `url(${post.sections[0].image})` }}
+              >
+                <div className="blog-card-day-label">{post.day}</div>
+                <div className="blog-card-overlay">
+                  <h3>{post.day}: {post.title}</h3>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      ) : (
-        <div className="blog-grid">
-          {blogPosts.map((post, index) => (
-            <div
-              className="blog-card"
-              key={index}
-              onClick={() => handleCardClick(post)}
-              style={{ animationDelay: `${index * 0.2}s`, backgroundImage: `url(${post.sections[0].image})` }}
-            >
-              <div className="blog-card-day-label">{post.day}</div>
-              <div className="blog-card-overlay">
-                <h3>{post.day}: {post.title}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
-    </section>
+        )}
+      </section>
+    </div>
   );
 };
 

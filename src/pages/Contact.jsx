@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import "./Contact.css";
@@ -12,18 +13,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
+  // eslint-disable-next-line no-unused-vars
   faLinkedin,
   faGithub,
 } from "@fortawesome/free-brands-svg-icons";
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    e.target.reset();
+    
+    // EmailJS configuration
+    const serviceID = 'service_nl43b0v';
+    const templateID = 'template_xobowbf';
+    const publicKey = 'oNmtmn7rviwDnfs47';
+
+    emailjs.sendForm(serviceID, templateID, e.target, publicKey)
+      // eslint-disable-next-line no-unused-vars
+      .then((result) => {
+        setSubmitted(true);
+        setError(null);
+        setTimeout(() => setSubmitted(false), 4000);
+        e.target.reset();
+      }, (error) => {
+        setError('Failed to send message. Please try again.');
+        setTimeout(() => setError(null), 4000);
+      });
   };
 
   return (
@@ -53,13 +71,10 @@ const Contact = () => {
           </div>
 
           <div className="socials">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/paulo.abrajano24?_rdc=1&_rdr" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">
+            <a href="https://github.com/paulo-24" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faGithub} />
             </a>
           </div>
@@ -86,6 +101,9 @@ const Contact = () => {
             <button type="submit">Send message</button>
             {submitted && (
               <p className="success-msg">Message sent successfully ✅</p>
+            )}
+            {error && (
+              <p className="error-msg">{error}</p>
             )}
           </form>
         </div>

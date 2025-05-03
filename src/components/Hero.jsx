@@ -41,8 +41,14 @@ const Hero = () => {
             <Link to="/experience" className="blog-button experience-button">
               <span>Experience</span>
             </Link>
+            <Link to="/certifications" className="blog-button">
+              <span>Certifications</span>
+            </Link>
           </div>
           <div className="social-icons fade-up delay-3">
+          {/* <a href="https://www.linkedin.com/in/john-paulo-abrajano-126906363/" target="_blank" rel="noopener noreferrer">
+              <i className="fab fa-linkedin"></i>
+            </a> */}
             <a href="https://www.facebook.com/paulo.abrajano24?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer">
               <i className="fab fa-facebook"></i>
             </a>

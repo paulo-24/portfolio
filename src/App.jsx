@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 import Blog from "./pages/Blog";
 import Experience from "./pages/Experience"; // Add this import
+import Certifications from "./pages/Certifications"; // Add this import
 
 const App = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/experience" element={<Experience />} /> {/* Add this route */}
+        <Route path="/certifications" element={<Certifications />} /> {/* Add this route */}
       </Routes>
     </Router>
   );

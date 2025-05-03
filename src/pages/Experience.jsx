@@ -9,7 +9,7 @@ const Experience = () => {
     <div className="experience">
       <div className="button-wrapper">
         <Link to="/" className="top-back-button">
-          <span>← Home</span>
+          ← <span> </span>
         </Link>
       </div>
       <section className="experience-container">

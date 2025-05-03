@@ -22,22 +22,55 @@
 .top-back-button {
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
-  background: #e74c3c !important;
-  color: #fff;
+  top: 30px;
+  left: 30px;
+  padding: 8px 16px;
+  background: white !important;
+  color: #e74c3c;
+  border: 2px solid #ff6b6b;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 25px;
   font-size: 1rem;
   font-weight: 500;
-  font-family: 'Quicksand', sans-serif;
-  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .top-back-button:hover {
-  background: #c0392b;
+  background: #c0392b !important;
   transform: translateY(-2px);
   box-shadow: 0 0 10px rgba(231, 76, 60, 0.4);
+}
+
+/* Hide text and show only arrow on mobile devices */
+@media (max-width: 768px) {
+  .top-back-button {
+    font-size: 0.9rem; /* Slightly smaller font-size to prevent stretching */
+    padding: 6px; /* Adjust padding for smaller circle */
+    width: 20px; /* Smaller width for a smaller circle */
+    height: 30px; /* Smaller height for a smaller circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 50%; /* Make it circular */
+    position: relative;
+    overflow: hidden;
+    line-height: 1; /* Ensure consistent vertical alignment */
+  }
+
+  .top-back-button::before {
+    content: '←'; /* Show only the arrow */
+    position: absolute;
+    font-size: 0.9rem; /* Match the font-size for proportionality */
+    color: #e74c3c;
+    font-weight: 700; /* Make the arrow bolder to avoid stretching */
+    line-height: 1; /* Prevent vertical stretching */
+  }
+
+  .top-back-button span {
+    display: none; /* Explicitly hide the "Back to Home" text */
+  }
 }
 
 .experience-container {
@@ -52,14 +85,24 @@
 }
 
 .experience-title {
-  font-size: 36px;
-  font-weight: 700;
-  font-family: 'Quicksand', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
   color: #030303;
   margin: 0;
   position: relative;
   display: inline-block;
   transition: all 0.3s ease;
+}
+
+.experience-title::before {
+  content: '';
+  width: 80px;
+  height: 5px;
+  background: #ff6b6b;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .experience-list {
