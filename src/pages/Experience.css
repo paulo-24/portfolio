@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Quicksand:wght@500&display=swap');
 
 .experience {
-  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   background: linear-gradient(135deg, #f0f4f8, #ffffff);
-  padding: 40px;
+  padding: 60px 40px;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   position: relative;
   animation: fadeInUp 0.8s ease-in-out both;
+  min-height: 100vh; /* Ensure enough height for scrolling */
 }
 
 .button-wrapper {
@@ -22,8 +22,6 @@
 .top-back-button {
   display: inline-flex;
   align-items: center;
-  top: 30px;
-  left: 30px;
   padding: 8px 16px;
   background: white !important;
   color: #e74c3c;
@@ -45,31 +43,31 @@
 /* Hide text and show only arrow on mobile devices */
 @media (max-width: 768px) {
   .top-back-button {
-    font-size: 0.9rem; /* Slightly smaller font-size to prevent stretching */
-    padding: 6px; /* Adjust padding for smaller circle */
-    width: 20px; /* Smaller width for a smaller circle */
-    height: 30px; /* Smaller height for a smaller circle */
+    font-size: 0.9rem;
+    padding: 6px;
+    width: 20px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    border-radius: 50%; /* Make it circular */
+    border-radius: 50%;
     position: relative;
     overflow: hidden;
-    line-height: 1; /* Ensure consistent vertical alignment */
+    line-height: 1;
   }
 
   .top-back-button::before {
-    content: '←'; /* Show only the arrow */
+    content: '←';
     position: absolute;
-    font-size: 0.9rem; /* Match the font-size for proportionality */
+    font-size: 0.9rem;
     color: #e74c3c;
-    font-weight: 700; /* Make the arrow bolder to avoid stretching */
-    line-height: 1; /* Prevent vertical stretching */
+    font-weight: 700;
+    line-height: 1;
   }
 
   .top-back-button span {
-    display: none; /* Explicitly hide the "Back to Home" text */
+    display: none;
   }
 }
 
@@ -117,6 +115,7 @@
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 1; /* Ensure items are visible by default */
 }
 
 .experience-item:hover {
@@ -172,7 +171,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #e74c3c ;
+  color: #e74c3c;
   font-size: 18px;
 }
 
@@ -180,6 +179,7 @@
   display: flex;
   justify-content: center;
   margin-top: 48px;
+  margin-bottom: 24px;
 }
 
 .back-button {
@@ -187,6 +187,7 @@
   align-items: center;
   padding: 10px 24px;
   color: #ffffff;
+  background: #3b82f6;
   text-decoration: none;
   border-radius: 8px;
   font-size: 14px;

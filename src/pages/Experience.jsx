@@ -1,10 +1,20 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Experience.css';
 
 const Experience = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      disable: false, // Ensure AOS is not disabled
+    });
+  }, []);
+
   return (
     <div className="experience">
       <div className="button-wrapper">
@@ -22,7 +32,7 @@ const Experience = () => {
               <h2 className="experience-role">
                 <span role="img" aria-label="laptop">💻</span> Software Engineering
               </h2>
-              <p className="experience-company">Team Project | College Capstone</p>
+              <p className="experience-company">Team Project | College Software Engineering</p>
               <p className="experience-duration">January 2024 – May 2024</p>
             </div>
             <div className="experience-description">
