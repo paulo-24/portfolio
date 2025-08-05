@@ -6,17 +6,21 @@
   align-items: center;
   background: linear-gradient(135deg, #f0f4f8, #ffffff);
   padding: 60px 40px;
+  padding-bottom: 200px;
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   position: relative;
   animation: fadeInUp 0.8s ease-in-out both;
-  min-height: 100vh; /* Ensure enough height for scrolling */
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .button-wrapper {
   position: absolute;
   top: 20px;
   left: 20px;
+  z-index: 10;
 }
 
 .top-back-button {
@@ -75,6 +79,7 @@
   max-width: 800px;
   width: 100%;
   padding: 0 16px;
+  margin-bottom: 60px;
 }
 
 .experience-header-top {
@@ -107,6 +112,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-bottom: 40px;
 }
 
 .experience-item {
@@ -115,12 +121,16 @@
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 1; /* Ensure items are visible by default */
+  opacity: 1;
 }
 
 .experience-item:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.2);
+}
+
+.experience-item:last-child {
+  margin-bottom: 40px;
 }
 
 .experience-header {
@@ -179,7 +189,7 @@
   display: flex;
   justify-content: center;
   margin-top: 48px;
-  margin-bottom: 24px;
+  margin-bottom: 60px;
 }
 
 .back-button {
@@ -202,6 +212,20 @@
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
 
+/* Scroll Indicator */
+.scroll-indicator {
+  font-size: 2rem;
+  color: #999;
+  animation: bounce 1.2s infinite;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
 /* Animation */
 @keyframes fadeInUp {
   from {
@@ -218,6 +242,7 @@
 @media (max-width: 1024px) {
   .experience {
     padding: 32px;
+    padding-bottom: 160px;
   }
 
   .experience-title {
@@ -232,6 +257,7 @@
 @media (max-width: 768px) {
   .experience {
     padding: 24px;
+    padding-bottom: 120px;
   }
 
   .button-wrapper {
@@ -264,6 +290,7 @@
 @media (max-width: 480px) {
   .experience {
     padding: 16px;
+    padding-bottom: 100px;
   }
 
   .button-wrapper {

@@ -67,7 +67,7 @@ const Contact = () => {
           </div>
 
           <div className="location-box">
-            <FontAwesomeIcon icon={faMapMarkerAlt} /> Zamboanga City, Philippines
+            <FontAwesomeIcon icon={faMapMarkerAlt} /> Ipil, Zamboanga Sibugay, Philippines 7001
           </div>
 
           <div className="socials">

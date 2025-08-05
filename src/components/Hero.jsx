@@ -30,14 +30,14 @@ const Hero = () => {
         <div className="hero-content">
           <h1 className="typewriter">{text}</h1>
           <h1 className="gradient-text">JOHN PAULO ABRAJANO</h1>
-          <h2 className="fade-up">Backend Developer</h2>
+          <h2 className="fade-up">Frontend Developer</h2>
           <p className="fade-up delay-1">
-            Passionate about building scalable and efficient systems that power modern web applications.
+            Passionate about crafting performant, intuitive, and scalable user interfaces that enhance modern web applications..
           </p>
           <div className="button-group fade-up delay-2">
-            <Link to="/blog" className="blog-button">
+            {/* <Link to="/blog" className="blog-button">
               <span>My Blog</span>
-            </Link>
+            </Link> */}
             <Link to="/experience" className="blog-button experience-button">
               <span>Experience</span>
             </Link>
