@@ -63,7 +63,7 @@ const Contact = () => {
             <p>
               <FontAwesomeIcon icon={faPhone} /> Contact Me:
             </p>
-            <a href="tel:+639684724752">+63 9684724752</a>
+            <a href="tel:+639684724752">+63 9682079765</a>
           </div>
 
           <div className="location-box">
